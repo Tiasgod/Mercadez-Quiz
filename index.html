@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ff6900">
+
+    <title>Quiz Mercadez — Desafio do Precinho</title>
+
+    <link rel="icon" href="assets/precinho_maior.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <span class="logo">M</span>
+
+            <div>
+                <strong>merca<span>dez</span></strong>
+                <small>Mercado Nota Dez!</small>
+            </div>
+        </div>
+
+        <span class="header-note">
+            DESAFIO DO PRECINHO
+        </span>
+    </header>
+
+    <main>
+
+        <!-- TELA INICIAL -->
+
+        <section id="home" class="hero">
+
+            <div class="intro">
+
+                <span class="eyebrow">
+                    DESAFIO MERCADEZ
+                </span>
+
+                <h1>
+                    Você sabe
+                    <em>economizar?</em>
+                </h1>
+
+                <p>
+                    Teste seus conhecimentos sobre compras
+                    inteligentes e economia no dia a dia.
+                </p>
+
+                <div class="stats">
+
+                    <div>
+                        <b>5</b>
+                        <span>Perguntas</span>
+                    </div>
+
+                    <div>
+                        <b>30s</b>
+                        <span>Por pergunta</span>
+                    </div>
+
+                    <div>
+                        <b>5</b>
+                        <span>Alternativas</span>
+                    </div>
+
+                </div>
+
+                <button id="start" class="primary">
+                    Começar quiz
+                    <span>→</span>
+                </button>
+
+            </div>
+
+            <!-- PRECINHO E ÍCONES ANIMADOS -->
+
+            <div class="art">
+
+                <img
+                    class="mascot mascot-float"
+                    src="assets/comprar_online.png"
+                    alt="Precinho fazendo compras online"
+                >
+
+                <img
+                    class="floating f1"
+                    src="assets/visual_economia_mercadez.png"
+                    alt=""
+                >
+
+                <img
+                    class="floating f2"
+                    src="assets/visual_comparar_precos.png"
+                    alt=""
+                >
+
+                <img
+                    class="floating f3"
+                    src="assets/visual_melhores_ofertas.png"
+                    alt=""
+                >
+
+                <img
+                    class="floating f4"
+                    src="assets/visual_lista_compras.png"
+                    alt=""
+                >
+
+            </div>
+
+        </section>
+
+        <!-- TELA DE PERGUNTAS -->
+
+        <section id="quiz" class="quiz-layout" hidden>
+
+            <article class="question-card">
+
+                <div class="question-top">
+
+                    <div class="progress-area">
+
+                        <div class="progress-label">
+                            <span id="position"></span>
+                            <span id="percent"></span>
+                        </div>
+
+                        <div
+                            class="track"
+                            role="progressbar"
+                            aria-label="Progresso"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            id="progress"
+                        >
+                            <div id="bar"></div>
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="timer"
+                        class="timer"
+                        aria-label="Tempo restante"
+                    >
+                        <span id="seconds">30</span>
+                        <small>seg</small>
+                    </div>
+
+                </div>
+
+                <h2 id="question" tabindex="-1"></h2>
+
+                <div
+                    id="answers"
+                    role="group"
+                    aria-label="Alternativas"
+                ></div>
+
+                <div class="question-bottom">
+
+                    <p id="feedback" aria-live="polite"></p>
+
+                    <button
+                        id="next"
+                        class="primary"
+                        disabled
+                    >
+                        Próxima →
+                    </button>
+
+                </div>
+
+            </article>
+
+            <aside class="side">
+
+                <img
+                    src="assets/visual_dicas_precinho.png"
+                    alt="Precinho"
+                >
+
+                <h3>Desafio do Precinho</h3>
+
+                <p>
+                    Leia com atenção e escolha uma alternativa
+                    antes que o tempo acabe.
+                </p>
+
+                <span>20 pontos por acerto</span>
+
+            </aside>
+
+        </section>
+
+        <!-- TELA DE RESULTADOS -->
+
+        <section id="result" class="result" hidden>
+
+            <img
+                id="result-icon"
+                src="assets/visual_melhores_ofertas.png"
+                alt=""
+            >
+
+            <span class="eyebrow">
+                DESAFIO CONCLUÍDO
+            </span>
+
+            <h2 id="rank"></h2>
+
+            <div class="score">
+                <strong id="score">0</strong>
+                <span>/ 100 pontos</span>
+            </div>
+
+            <p id="summary"></p>
+
+            <p id="message"></p>
+
+            <details>
+
+                <summary>
+                    Ver gabarito e minhas respostas
+                </summary>
+
+                <div id="review"></div>
+
+            </details>
+
+            <button id="restart" class="primary">
+                Jogar novamente ↻
+            </button>
+
+            <button id="back" class="secondary">
+                Voltar ao início
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Mercadez · Mercado Nota Dez!
+    </footer>
+
+</body>
+
+</html>
